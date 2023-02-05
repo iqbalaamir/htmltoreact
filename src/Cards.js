@@ -15,10 +15,15 @@ function Cards() {
                     <li><span className="fa-li"><i className="fas fa-check"></i></span>{item.storage} Storage</li>
                     <li><span className="fa-li"><i className="fas fa-check"></i></span>Unlimited Public Projects</li>
                     <li><span className="fa-li"><i className="fas fa-check"></i></span>{item.access}</li>
-                    <li><span className="fa-li"><i className="fas fa-check"></i></span>{item.projects}</li>
-                    <li><span className="fa-li"><i className="fas fa-check"></i></span>{item.support}</li>
-                    <li><span className="fa-li"><i className="fas fa-check"></i></span>{item.domain}</li>
-                    <li><span className="fa-li"><i className="fas fa-check"></i></span>{item.report}</li>
+                    <li className={item.title === "FREE" ? "text-muted" : ""}>
+                    <span className="fa-li">
+                        <i className={item.title === "FREE" ? "fas fa-times" : "fas fa-check"}></i>
+                    </span>
+                    {item.projects}
+                    </li>
+                    <li className={item.title === "FREE" ? "text-muted" : ""}><span className="fa-li"><i className={item.title === "FREE" ? "fas fa-times" : "fas fa-check"}></i></span>{item.support}</li>
+                    <li className={item.title === "FREE" ? "text-muted" : ""}><span className="fa-li"><i className={item.title === "FREE" ? "fas fa-times" : "fas fa-check"}></i></span>{item.domain}</li>
+                    <li className={item.title === "PRO" ? "" : "text-muted"}><span className="fa-li"><i className={item.title === "PRO" ? "fas fa-check" : "fas fa-times"}></i></span>{item.report}</li>
                   </ul>
                   <div className="d-grid">
                     <a href="#" className="btn btn-primary text-uppercase">Button</a>
